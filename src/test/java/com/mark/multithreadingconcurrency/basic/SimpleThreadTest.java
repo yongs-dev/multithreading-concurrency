@@ -1,4 +1,4 @@
-package com.mark.multithreadingconcurrency.thread;
+package com.mark.multithreadingconcurrency.basic;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.DisplayName;
