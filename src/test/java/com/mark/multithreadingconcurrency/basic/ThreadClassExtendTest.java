@@ -1,6 +1,8 @@
 package com.mark.multithreadingconcurrency.basic;
 
+import com.mark.multithreadingconcurrency.RunUtil;
 import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +12,8 @@ import java.util.concurrent.ThreadLocalRandom;
 public class ThreadClassExtendTest {
     private static final int MAX_PASSWORD = 9999;
 
-    public static void main(String[] args) {
+    @Test
+    public void threadClassExtendTest() {
         Vault vault = new Vault(ThreadLocalRandom.current().nextInt(MAX_PASSWORD));
 
         List<Thread> threads = new ArrayList<>();
@@ -21,6 +24,8 @@ public class ThreadClassExtendTest {
         for (Thread thread : threads) {
             thread.start();
         }
+
+        RunUtil.noStopTest();
     }
 
     private static class Vault {

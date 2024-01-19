@@ -28,7 +28,8 @@ public class BlockingThreadTest {
         }
     }
 
-    public static void main(String[] args) {
+    @Test
+    public void daemonThreadTest() {
         Thread thread = new Thread(new LongComputationTask(new BigInteger("9999999"), new BigInteger("9999999999999999")));
         // Daemon Thread 설정 시 main Thread가 종료되면 다 종료됨
         thread.setDaemon(true);

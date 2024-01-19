@@ -1,7 +1,9 @@
 package com.mark.multithreadingconcurrency.basic;
 
+import com.mark.multithreadingconcurrency.RunUtil;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.Test;
 
 import java.math.BigInteger;
 import java.util.Arrays;
@@ -11,7 +13,8 @@ import java.util.List;
 public class CoordinationThreadTest {
 
     // Thread.join() 이용한 Thread 간 대기
-    public static void main(String[] args) throws InterruptedException {
+    @Test
+    public void coordinationThreadTest() throws Exception {
         List<Long> numbers = Arrays.asList(10000000000L, 3435L, 35435L, 2324L, 4656L, 23L, 2435L, 5566L);
 
         List<FactorialThread> threads = numbers.stream()
@@ -37,6 +40,8 @@ public class CoordinationThreadTest {
                 log.info("The calculation for {} is still is progress", numbers.get(i));
             }
         }
+
+        RunUtil.noStopTest();
     }
 
     private static class FactorialThread extends Thread {
