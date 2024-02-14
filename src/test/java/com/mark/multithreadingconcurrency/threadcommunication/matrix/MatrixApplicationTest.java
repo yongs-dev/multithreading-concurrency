@@ -29,18 +29,6 @@ public class MatrixApplicationTest {
         matricesReader.start();
     }
 
-    public static void main(String[] args) throws IOException {
-        ThreadSafeQueue threadSafeQueue = new ThreadSafeQueue();
-        File inputFile = new File(INPUT_FILE);
-        File outputFile = new File(OUTPUT_FILE);
-
-        MatricesReaderProducer matricesReader = new MatricesReaderProducer(new FileReader(inputFile), threadSafeQueue);
-        MatricesMultiplierConsumer matricesConsumer = new MatricesMultiplierConsumer(new FileWriter(outputFile), threadSafeQueue);
-
-        matricesConsumer.start();
-        matricesReader.start();
-    }
-
     private static class MatricesMultiplierConsumer extends Thread {
         private ThreadSafeQueue queue;
         private FileWriter fileWriter;

@@ -1,6 +1,5 @@
 package com.mark.multithreadingconcurrency.threadcommunication.matrix;
 
-import com.mark.multithreadingconcurrency.RunUtil;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
